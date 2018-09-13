@@ -1,0 +1,17 @@
+Known
+
+//Middleware and app.js 
+How do I know which app.use line is the app logic that does the res?
+Originally its the routes/index.js file in form generated when app was created
+
+In original form, the anonymous function that runs this code
+router.get ('/', function(req, res) 
+    res.render('index', (title: 'Known'));
+is really the controller
+
+
+//Heroku
+Added
+Profile
+will tell Heroku that the app needs a web process and should run 
+npm start 
