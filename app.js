@@ -2,16 +2,20 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
-const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+require('./app_server/models/db');
 
 //Edited indexRouter and usersRotuer to just index and users, also edited the / and /users below. 
+
+//Here is the code to req routes/index.js
 const index = require('./app_server/routes/index');
 const users = require('./app_server/routes/users');
 
 const app = express();
 
-// view engine setup,
+// view engine setup, specify the path to the view folder thus.
 app.set('views', path.join(__dirname, 'app_server','views'));
 app.set('view engine', 'pug');
 

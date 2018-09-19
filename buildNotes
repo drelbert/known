@@ -15,3 +15,44 @@ Added
 Profile
 will tell Heroku that the app needs a web process and should run 
 npm start 
+
+
+//URL Path definition 
+Collection
+projects
+Screen List/Launch(Home)
+lists of projects, opportunities 
+URL Path
+/
+
+Collection
+projects 
+Screen 
+details 
+URL Path 
+/projects 
+
+Collection
+projects 
+Screen 
+details add 
+URL Path
+/project/add
+
+Collection
+about 
+Screen 
+details 
+URL Path 
+/about
+
+
+//Building a Mongo DB
+mongo commands 
+show dbs
+use '  '
+db.collection.find().pretty
+db.collection.update({
+    key: value,
+    key: value
+})

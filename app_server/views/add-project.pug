@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  h1= pageHeader.title
+
+  form(action="/project", method="get", role='form')
+    .form-group.row 
+      label.col-10.col-sm-2.col-form-label(for="title") Title
+      .col-12.col-sm-10
+        input#title.form-control(name="title")
+    .form-group.row
+      label.col-10.col-sm-2.col-form-label(for="description") Description  
+      .col-12.col-sm-10
+        input#description.form-control(name="description")
+    .form-group.row
+      label.col-10.col-sm-2.col-form-label(for="lead") Lead  
+      .col-12.col-sm-10
+        input#lead.form-control(name="lead")
+    .form-group.row
+      label.col-10.col-sm-2.col-form-label(for="team") Team  
+      .col-12.col-sm-10
+        input#team.form-control(name="team")
+    .form-group.row
+      label.col-10.col-sm-2.col-form-label(for="outcomes") Outcomes  
+      .col-12.col-sm-10
+        input#outcomes.form-control(name="outcomes")
+    .form-group.row
+      label.col-10.col-sm-2.col-form-label(for="protoDue") Completion  
+      .col-12.col-sm-10
+        input#protoDue.form-control(name="protoDue")
+  button.btn.btn-primary.float-right Add Project
+
+
+    
+  

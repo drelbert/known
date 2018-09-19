@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= pageHeader.title
+  
+  each project in projects
+    h4 
+      a(href="/project")= project.title 
+      h5= project.description 
+      h6 Lead: #{project.lead}
+      h6 Team: #{project.teamMembers} 
+      h6 Due Date : #{project.protoDue}
+
+
+
