@@ -9,12 +9,31 @@ router.get ('/', function(req, res)
     res.render('index', (title: 'Known'));
 is really the controller
 
+//Git 
+to update files
+git add --all
+git commit -m 'Some message about the commit'
 
 //Heroku
 Added
 Profile
 will tell Heroku that the app needs a web process and should run 
 npm start 
+
+Creating on Heroku
+one - code is in a local Git repo 
+and
+two - create a remote repo on Heroku with this command 
+heroku create 
+and the result is 
+Creating app... done, ⬢ intense-river-13488
+https://intense-river-13488.herokuapp.com/ | https://git.heroku.com/intense-river-13488.git
+
+this only creates a remote repo on Heroku
+adding the code is next 
+
+with this command
+git push heroku master 
 
 
 //URL Path definition 
@@ -56,3 +75,28 @@ db.collection.update({
     key: value,
     key: value
 })
+
+
+
+//MLab
+mongolab-rugged-78147 as MONGODB_URI
+
+the URI 
+mongodb://heroku_bf9tx0rq:4o7hgbeftgukc62i3hb94mp6gl@ds163402.mlab.com:63402/heroku_bf9tx0rq
+
+breakdown  
+mongodb:// = MongoDB protocol
+username = heroku_bf9tx0rq 
+password = 4o7hgbeftgukc62i3hb94mp6gl
+server address(host name) = @ds163402.mlab.com
+port = 63402
+db name = heroku_bf9tx0rq
+
+dump and restore with this command
+mongorestore -h ds163402.mlab.com:63402 -d heroku_bf9tx0rq -u heroku_bf9tx0rq  -p 4o7hgbeftgukc62i3hb94mp6gl dump/
+
+view into db on mLab use
+$ mongo ds163402.mlab.com:63402/heroku_bf9tx0rq -u heroku_bf9tx0rq  -p 4o7hgbeftgukc62i3hb94mp6gl
+
+to start app in production mode with connection to mLab use this command 
+NODE_ENV=production MONGODB_URI=mongodb://heroku_bf9tx0rq:4o7hgbeftgukc62i3hb94mp6gl@ds163402.mlab.com:63402/heroku_bf9tx0rq nodemon

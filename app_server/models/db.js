@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 //DB connection string definition
-const dbURI = 'mongodb://localhost/known';
+let dbURI = 'mongodb://localhost/known';
+if (process.env.NODE_ENV === 'production') {
+  dbURI = 'mongodb://heroku_bf9tx0rq:4o7hgbeftgukc62i3hb94mp6gl@ds163402.mlab.com:63402/heroku_bf9tx0rq'
+}
 mongoose.connect(dbURI);
 //Opening Mongoose connection at app startup
 mongoose.connection.on('connected', () => {
@@ -16,7 +19,7 @@ mongoose.connection.on('disconnected', () => {
 //Capturing the process termination events
 //Monitoring the Mongoose connection events 
 //Adding three event listeners.
-//Ans one function to close the db.
+//And one function to close the db.
 const gracefulShutdown = (msg, callback) => {
     mongoose.connection.close( () => {
         //message to console conf that connection is closed and reason
