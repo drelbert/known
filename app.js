@@ -5,13 +5,11 @@ const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-require('./app_server/models/db');
+require('./app_api/models/db');
 
 //Edited indexRouter and usersRotuer to just index and users, also edited the / and /users below. 
 
-//Here is the code to req routes/index.js
-const index = require('./app_server/routes/index');
-const users = require('./app_server/routes/users');
+const apiRoutes = require('./app_api/routes/index');
 
 const app = express();
 
@@ -24,14 +22,28 @@ app.set('view engine', 'pug');
 //Passing each one which may or may not do something
 //Arriving at the app logic itself which is????
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//Adding line to use the app_public/build folder.
+app.use(express.static(path.join(__dirname, 'app_public', 'build')));
+//Defining a static path for the Angular application 
+app.use(express.static(path.join(__dirname, 'app_public')));
 
-//Is line 27 possibly the middleware that contains the app logic?
-app.use('/', index);
-app.use('/users', users);
+//Allowing CORS req in Express 
+app.use('/api', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+ });
+//Here are the routes the app needs 
+//Using the / paramter defines when it should use them
+//For instance, we tell the app to use the API routes only when the route starts with /api
+app.use('/api', apiRoutes);
+app.get(/(\/dashboard)|(\/project\/[a-z0-9]{24})/, function(req, res, next) {
+  res.sendFile(path.join(__dirname, 'app-public', 'build', 'index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

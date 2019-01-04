@@ -65,6 +65,11 @@ details
 URL Path 
 /about
 
+//Starting Mongo 
+mongod 
+
+mongo 
+for  using below commands 
 
 //Building a Mongo DB
 mongo commands 
@@ -100,3 +105,205 @@ $ mongo ds163402.mlab.com:63402/heroku_bf9tx0rq -u heroku_bf9tx0rq  -p 4o7hgbeft
 
 to start app in production mode with connection to mLab use this command 
 NODE_ENV=production MONGODB_URI=mongodb://heroku_bf9tx0rq:4o7hgbeftgukc62i3hb94mp6gl@ds163402.mlab.com:63402/heroku_bf9tx0rq nodemon
+
+//REST API DB exposure 
+
+REST is a stateless protocol 
+API allows apps to talk with each other 
+
+In the MEAN stack, REST API is for a stateless interface with DB 
+
+
+//Mongo/Mopngoose Query Methods
+find 
+findById 
+    this method is straighforward, accepting a single parameter, the ID to look for
+findOne 
+
+//Adding error trapping 
+Three errors to trap 
+No project Id or similar missing Id 
+The methods (.find or .findById) do not return a location
+The methods return an error 
+
+
+//Mongo/Mongoose POST methods 
+POST = creating docs in the db and returning saved data as confirmation
+Take posted data and use it to create a JavaScript object, matching the shcema
+Send and appropriate res in the callback dep on succes or failure of the create operation
+
+//Put methods 
+PUT methods update existing docs or subdocuments in the db and return saved data as confirmation 
+Similar to POST but diff in that the prexisting doc is updated 
+
+//DELETE methods 
+see the controller in app_api
+
+
+//Consuming a REST API
+Using an API inside Express 
+
+//Calling an API from Express 
+How to call the API from Express?
+
+The Express app needs to be able to call the API URLs
+
+request 
+module 
+will be used for this
+just like any other packages 
+
+Using the request module 
+Four common req options
+url    this is required 
+method  not required, but defaults to GET (can be POST, PUT, DELETE)
+json    this is required 
+qs      not required 
+
+
+//Adding data to the db via the API
+steps 
+create a route for the form to POST to 
+send the new project data to the API 
+show the new project 
+
+NOTE = this same process needs to be completed for updating the project 
+
+
+//Angular 
+Building blocks  
+two things 
+components = handles specific piece of functionality 
+modules = two ore more components working together 
+
+//run known-public
+use = ng serve 
+
+//Source code research 
+src/app 
+
+nav to 4200
+
+
+the main module 
+this is the central point of the the Angular module where all the components are brought together 
+app.module.ts 
+
+along side this module are the 
+app.component
+.css 
+.html
+.ts 
+
+The CSS and HTML files define the stypes and markup for the component
+While the TS defines the TypeScript behaviour 
+
+In Angular {{ }}
+denote a binding between the data and the view 
+
+Tying it all together 
+the component AppComponent comprises 3 files 
+    .ts
+    .html
+    .css 
+the .ts file is the key part of the component = 
+    defining the the functionality referencing the other files and declaring which selector(HTML tag) it will bind to
+the component .ts file exports the AppComponent class 
+the module file imports the AppComponent class from the component .ts file and declares it as the entry point in the application 
+the module file also imports various pieces of native Angular functionality
+
+//The Angular build process 
+Dealing with issue of TS and JS, where TS is not read in browser 
+done by converting TS into vanilla JS then puts them into one file  
+which is called the main.bundle.js 
+
+
+//Working with Angular Components 
+Create home-list and set it as default component 
+
+
+Note: using ng serve 
+is for dev only
+Once app is in right condition,
+then the 'build' folder is created and app
+is in production 
+
+
+
+//Ch 9 Build SPA w Angular 
+How?
+Navigate between pages in Angular 
+Working with Angular router 
+Architechture best practices for an SPA 
+Building up views through multiple components
+Inject HTML into bindings 
+
+
+//Transition 
+from using Express server 
+to 
+running everything in the browser with Angular  
+note = essentially recreating the main app as an
+Angular SPA 
+and moving the app logic from the back 
+to the front end 
+
+
+
+
+//Color Pallete
+https://www.color-hex.com/color-palette/18601
+
+
+
+//Chapter 10 
+Project details page 
+layout 
+
+components 
+framework 
+    details page 
+        page header 
+        project page details
+        sidebar 
+
+
+//HTTP work 
+//POST
+known-data-service 
+has
+    public postNewProject
+
+add-projects 
+has 
+    postNewProject
+
+
+
+//GET 
+know-data-service 
+has
+    getProjects 
+
+home-list 
+has 
+    getProjects
+
+
+//Workflow for updating POST 
+    ensure that the key:value pairs match 
+    for 
+        home-list 
+        and 
+        details-page 
+ 
+//Using the SPA 
+Updating Express to deliver Angular as front-end rather than Pug 
+
+
+//Ch 11 Auth Users, Mng Session, Secure API
+
+
+Dont forget material.io 
+
+

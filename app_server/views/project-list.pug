@@ -1,15 +1,13 @@
 extends layout
 
 block content
-  h1= pageHeader.title
-  
-  each project in projects
-    h4 
-      a(href="/project")= project.title 
-      h5= project.description 
-      h6 Lead: #{project.lead}
-      h6 Team: #{project.teamMembers} 
-      h6 Due Date : #{project.protoDue}
+  .error= message 
 
+  app-home-list Es Coming...
+  //-    comment here 
 
+block scripts
+  script(src='/build/runtime.a66f828dca56eeb90e02.js')
+  script(src='/build/polyfills.7fb637d055581aa28d51.js')
+  script(src='/build/main.45245dd1cf3d856859e4.js')
 

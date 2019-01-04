@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-12 col-md-6">
+    <h2> Details </h2>
+  </div>
+</div>
+<div class="card card-secondary">
+  <div class="card-block">
+    <h2 class="card-title">Team Specifics</h2>
+    <h3>
+      Lead: {{ project.lead }}
+    </h3>
+    <h3>
+      Team: {{ project.teamMembers }}
+    </h3>
+  </div>
+</div>
+<div class="col-12 col-md-10">
+  <div class="card-block">
+    <h2 class="card-title">Project Specifics</h2>
+    <h4>
+        Goal: {{ project.goal }}
+      </h4>
+      <h4>
+        Outcome: {{ project.outcomes }}
+      </h4>
+      <h5>
+        Prototype Due: {{ project.protoDue | date : 'd MMMM yyyy' }}
+      </h5>
+      <h5>
+        Completion: {{ project.completion | date : 'd MMMM yyyy'}}
+      </h5>
+  </div>
+</div>
+<div class="col-12 col-md-10">
+    <div class="card-block">
+        <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Update This Project</button>
+    </div>
+  </div>
+  <div class="col-12 col-md-10">
+      <div class="card-block">
+          <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Archive This Project</button>
+      </div>
+    </div>
+
+
+
+
+
+

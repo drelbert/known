@@ -1,0 +1,20 @@
+<div class="row">
+ <div class="column">
+  <div class="card card-primary" *ngFor="let project of projects">
+  <div class="card-block">
+  <h2> 
+      <a routerLink="/project/{{project._id}}">{{project.title}}</a>
+  </h2>
+     <h4 class="description">{{project.description}}
+     </h4>
+     <h4 class="lead">Lead:
+         {{project.lead}}
+     </h4>
+    </div>
+   </div>
+  </div>
+</div>
+
+
+
+

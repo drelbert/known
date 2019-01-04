@@ -11,8 +11,14 @@ const ctrlAbout= require('../controllers/others');
 //These are the routes for each screen
 //These routes serve as a mapping service taking the URL of incoming req and mapping it to app functionality
 router.get('/', ctrlProjects.homelist);
-router.get('/projects', ctrlProjects.projectList);
-router.get('/project/add/new', ctrlProjects.addNew);
+router.get('/project/:projectid', ctrlProjects.projectDetails);
+//Adding a ...
+router
+   .route('/projects/add/new')
+   .get(ctrlProjects.addNew)
+   .post(ctrlProjects.projectsCreate); 
+
+
 
 /* Other pages */
 router.get('/about', ctrlAbout.about);

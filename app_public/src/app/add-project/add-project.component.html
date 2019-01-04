@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-10">
+      <div class="card card-primary project-card">
+        <div class="card-block">
+      <button (click)="formVisible=true" class="btn btn-primary float-center">Add A Project</button>
+      <button type="button" (click)="formVisible=false" class="btn btn-default float-center">Cancel</button>
+    <div *ngIf="formVisible">
+      
+<form (ngSubmit)="postNewProject()">
+    <hr>
+    <h2>Add A Project</h2>
+    <div *ngIf="formError" class="alert alert-danger" role="alert">
+      {{ formError }}
+    </div>
+    <div *ngIf="formVisible">
+    <div class="form-group row">
+      <label for="title" class="col-sm-4 col-form-label">Title</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="newProject.title" id="title" name="title" required="required" class="form-control">
+      </div>
+    </div>
+    <div class="form-group row">
+        <label for="description" class="col-sm-4 col-form-label">Description</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="newProject.description" id="description" name="description" required="required" class="form-control">
+        </div>
+      </div>
+    <div class="form-group row">
+          <label for="lead" class="col-sm-4 col-form-label">Lead</label>
+          <div class="col-sm-10">
+            <input [(ngModel)]="newProject.lead" id="lead" name="lead" class="form-control">
+          </div>
+        </div>
+    <div class="form-group row">
+        <label for="teamMembers" class="col-sm-4 col-form-label">Team</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="newProject.teamMembers" id="teamMembers" name="teamMembers" class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="goal" class="col-sm-4 col-form-label">Goal</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="newProject.goal" id="goal" name="goal" class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="outcomes" class="col-sm-4 col-form-label">Outcomes</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="newProject.outcomes" id="outcomes" name="outcomes" class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="protoDue" class="col-sm-4 col-form-label">Prototype Due</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="newProject.protoDue" id="protoDue" name="protoDue" class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="completion" class="col-sm-4 col-form-label">Due Date</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="newProject.completion" id="completion" name="completion" class="form-control">
+        </div>
+    </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary float-left" style="margin-left:15px">Submit Project</button>
+
+
+      </div>
+     </div>
+     <hr> 
+    </form>
+   </div>
+  </div>
+ </div>
+</div>
+</div>
