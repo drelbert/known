@@ -97,14 +97,37 @@ server address(host name) = @ds163402.mlab.com
 port = 63402
 db name = heroku_bf9tx0rq
 
-dump and restore with this command
-mongorestore -h ds163402.mlab.com:63402 -d heroku_bf9tx0rq -u heroku_bf9tx0rq  -p 4o7hgbeftgukc62i3hb94mp6gl dump/
 
 view into db on mLab use
 $ mongo ds163402.mlab.com:63402/heroku_bf9tx0rq -u heroku_bf9tx0rq  -p 4o7hgbeftgukc62i3hb94mp6gl
 
-to start app in production mode with connection to mLab use this command 
-NODE_ENV=production MONGODB_URI=mongodb://heroku_bf9tx0rq:4o7hgbeftgukc62i3hb94mp6gl@ds163402.mlab.com:63402/heroku_bf9tx0rq nodemon
+
+//Using Heroku and mLab
+first
+To start app in production mode with connection to mLab use this command 
+NODE_ENV=production  
+
+dbURI is (in app_api/db.js)
+mongodb://heroku_bf9tx0rq:4o7hgbeftgukc62i3hb94mp6gl@ds163402.mlab.com:63402/heroku_bf9tx0rq 
+
+
+
+
+Global name for Heroko add-on 
+    mongolab-rugged-78147
+
+Pushing data 
+dump 
+     mongodump -h localhost:27017 -d known
+
+restore
+    first make sure that both files from 'dump' are at the top level of the file 
+        then go
+    mongorestore -h ds163402.mlab.com:63402 -d heroku_bf9tx0rq -u heroku_bf9tx0rq  -p 4o7hgbeftgukc62i3hb94mp6gl dump/
+
+
+
+
 
 //REST API DB exposure 
 
@@ -301,7 +324,51 @@ has
 Updating Express to deliver Angular as front-end rather than Pug 
 
 
+//Bug with Heroku and mLab db connection 
+the build as of now 
+db = MongoDB
+API, Express, Node.js
+SPA = Angular/AngularJS 
+
+
+
 //Ch 11 Auth Users, Mng Session, Secure API
+//Authentication 
+traditionally 
+    server reserves resources for each user to maintain session info 
+    BUT Node and Express don't maintain sessions for each user = 
+        the entire app for all users runs on one thread 
+    
+    and if using a server-side app based on Express
+        a db is used to store the data 
+        in this case MongoDB 
+            another option = Redis key-value store 
+
+    The actual approach 
+        adding authentication to an SPA hitting an API for data 
+
+//MEAN Approach 
+Two problems to deal with 
+    API is stateless since Node and Express have no concept of user sessions 
+
+    App logic is already delivered to the browser meaning that the code that get's delivered cannot be limited 
+
+Solution 
+    Maintain some sort of session state in the browser 
+        letting the app choose what does/not display to the current user  
+
+JSON Web Tokens aka tokens 
+    Keeps user data in the browser to maintain a session 
+
+    Basically 
+        JWT = JSON object encrypted into a string and is meaningless to the human eye  
+        BUT can be decoded and understood by both the app and server  
+
+Securelly Calling the API 
+    Given restrictions to app for certain users 
+    Only auth users can perform certain actions
+
+ 
 
 
 Dont forget material.io 

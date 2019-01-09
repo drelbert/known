@@ -15,7 +15,8 @@ const homelist = function(req, res){
     const path = '/api/projects';
     //Var requestOtions value here and used below in the request module below.
     const requestOptions = {
-        url : apiOptions.server + path,
+        //Modfication made Jan 9, added backtics and {}.
+        url : `{apiOptions.server + path}`,
         method : 'GET',
         json : {},
         qs : { }

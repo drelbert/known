@@ -42,7 +42,8 @@ import { AddProjectComponent } from './add-project/add-project.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    RouterModule
   ],
   providers: [],
   bootstrap: [FrameworkComponent]

@@ -25,11 +25,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
 //Adding line to use the app_public/build folder.
 app.use(express.static(path.join(__dirname, 'app_public', 'build')));
-//Defining a static path for the Angular application 
-app.use(express.static(path.join(__dirname, 'app_public')));
+
 
 //Allowing CORS req in Express 
 app.use('/api', (req, res, next) => {
