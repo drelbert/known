@@ -20,7 +20,7 @@ const homelist = function(req, res){
         method : 'GET',
         json : {},
         qs : { }
-    };
+    };  
     //Given the req and res data, here is the code that will pass the data right into the _renderHomepage function.
     //Using the request module, callback
     request(

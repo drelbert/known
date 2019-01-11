@@ -9,10 +9,17 @@ router.get ('/', function(req, res)
     res.render('index', (title: 'Known'));
 is really the controller
 
-//Git 
-to update files
-git add --all
-git commit -m 'Some message about the commit'
+//Using Git to Update to Heroku
+to update files enter each and only wait after 'git commit' and 'git push'
+    git add --all
+    git commit -m 'Some message about the commit'
+    git push heroku master 
+//TODO add commands here 
+ for startingin production
+ and production nodemon 
+
+ 
+
 
 //Heroku
 Added
@@ -32,8 +39,7 @@ https://intense-river-13488.herokuapp.com/ | https://git.heroku.com/intense-rive
 this only creates a remote repo on Heroku
 adding the code is next 
 
-with this command
-git push heroku master 
+
 
 
 //URL Path definition 
