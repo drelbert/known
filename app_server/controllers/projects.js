@@ -2,11 +2,15 @@
 //Given that every API call needs fully qualified URL, must include the full address.
 const request = require('request');
 const apiOptions = {
-    server : 'http://localhost:3000'
+    server : 'http://localhost:3000' || 'https://intense-river-13488.herokuapp.com'
 };
+
+/* Commented out to test
 if (process.env.NODE_ENV === 'production') {
     apiOptions.server = 'https://intense-river-13488.herokuapp.com';
 }
+*/
+
 //Projects Controller file 
 //Get home page 
 //Practice point, separation of concerns.  Decouple the .render from app logic to practice where one fucntion just does one thing.

@@ -9,18 +9,6 @@ router.get ('/', function(req, res)
     res.render('index', (title: 'Known'));
 is really the controller
 
-//Using Git to Update to Heroku
-to update files enter each and only wait after 'git commit' and 'git push'
-    git add --all
-    git commit -m 'Some message about the commit'
-    git push heroku master 
-//TODO add commands here 
- for startingin production
- and production nodemon 
-
- 
-
-
 //Heroku
 Added
 Profile
@@ -38,6 +26,23 @@ https://intense-river-13488.herokuapp.com/ | https://git.heroku.com/intense-rive
 
 this only creates a remote repo on Heroku
 adding the code is next 
+
+
+//Using Git to Update to Heroku
+to update files enter each and only wait after 'git commit' and 'git push'
+    git add --all
+    git commit -m 'Some message about the commit'
+    git push heroku master 
+
+
+//TODO add commands here 
+ for starting production
+ and production nodemon 
+
+
+
+
+
 
 
 
@@ -92,16 +97,13 @@ db.collection.update({
 //MLab
 mongolab-rugged-78147 as MONGODB_URI
 
-the URI 
-mongodb://heroku_bf9tx0rq:4o7hgbeftgukc62i3hb94mp6gl@ds163402.mlab.com:63402/heroku_bf9tx0rq
-
 breakdown  
-mongodb:// = MongoDB protocol
-username = heroku_bf9tx0rq 
-password = 4o7hgbeftgukc62i3hb94mp6gl
-server address(host name) = @ds163402.mlab.com
-port = 63402
-db name = heroku_bf9tx0rq
+    mongodb:// = MongoDB protocol
+    username = heroku_bf9tx0rq 
+    password = 4o7hgbeftgukc62i3hb94mp6gl
+    server address(host name) = @ds163402.mlab.com
+    port = 63402
+    db name = heroku_bf9tx0rq
 
 
 view into db on mLab use
@@ -111,11 +113,22 @@ $ mongo ds163402.mlab.com:63402/heroku_bf9tx0rq -u heroku_bf9tx0rq  -p 4o7hgbeft
 //Using Heroku and mLab
 first
 To start app in production mode with connection to mLab use this command 
-NODE_ENV=production  
+//Testing locally by using this line  
+    NODE_ENV=production MONGODB_URI=mongodb://heroku_bf9tx0rq:4o7hgbeftgukc62i3hb94mp6gl@ds163402.mlab.com:63402/heroku_bf9tx0rq nodemon
 
-dbURI is (in app_api/db.js)
-mongodb://heroku_bf9tx0rq:4o7hgbeftgukc62i3hb94mp6gl@ds163402.mlab.com:63402/heroku_bf9tx0rq 
+entered in one line in terminal 
 
+then nav to 
+    localhost:3000
+
+
+//Testing on Heroku by first commiting changes 
+git add --all
+git commit –m 'add commi tmessage here'
+git push heroku master
+
+view the logs with 
+heroku logs 
 
 
 
