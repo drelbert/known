@@ -2,7 +2,7 @@
 //Given that every API call needs fully qualified URL, must include the full address.
 const request = require('request');
 const apiOptions = {
-    server : 'http://localhost:3000'
+    server : 'https://intense-river-13488.herokuapp.com'
 };
 if (process.env.NODE_ENV === 'production') {
     apiOptions.server = 'https://intense-river-13488.herokuapp.com';
@@ -15,7 +15,6 @@ const homelist = function(req, res){
     const path = '/api/projects';
     //Var requestOtions value here and used below in the request module below.
     const requestOptions = {
-        //Modfication made Jan 9, added backtics and {}.
         url : `{apiOptions.server + path}`,
         method : 'GET',
         json : {},
