@@ -107,6 +107,7 @@ const projectsUpdateOne = function (req, res) {
             project.lead = req.body.lead;
             project.team = req.body.team;
             project.outcomes = req.body.outcomes;
+            project.protoDue = req.body.protoDue;
             project.completion = req.body.completion 
         },
         project.save((err, project) => {

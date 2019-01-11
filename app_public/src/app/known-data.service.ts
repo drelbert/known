@@ -17,6 +17,9 @@ import { Project } from './project';
   providedIn: 'root'
 })
 export class KnownDataService {
+  //Injecting the service by defining the parameter name: type
+  constructor(private http: HttpClient) { }
+
   //the URL call
   private apiBaseUrl = 'http://localhost:3000/api';
 
@@ -58,7 +61,6 @@ export class KnownDataService {
     console.error('Something has gone wrong', error);
     return Promise.reject(error.message || error);
   }
-  //Injecting the service by defining the parameter name: type
-  constructor(private http: HttpClient) { }
+
 }
  

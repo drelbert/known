@@ -49,5 +49,4 @@ process.once('SIGUSR2', () => {
   });
 
   require('./projects');
-  //Uncomment for auth work.
-  //require('./users');
+  require('./users');

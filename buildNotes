@@ -35,18 +35,6 @@ to update files enter each and only wait after 'git commit' and 'git push'
     git push heroku master 
 
 
-//TODO add commands here 
- for starting production
- and production nodemon 
-
-
-
-
-
-
-
-
-
 //URL Path definition 
 Collection
 projects
@@ -124,7 +112,7 @@ then nav to
 
 //Testing on Heroku by first commiting changes 
 git add --all
-git commit –m 'add commi tmessage here'
+git commit –m 'add commit message here'
 git push heroku master
 
 view the logs with 
@@ -387,7 +375,23 @@ Securelly Calling the API
     Given restrictions to app for certain users 
     Only auth users can perform certain actions
 
- 
+Setting encrypted paths with Mongoose methods 
+
+Validating submitted password 
+
+Generating a JWT 
+    Kept things secret with an env var 
+    .env file and file added to .gitignore list 
+
+
+Creating Auth with Passport 
+    Several strategies
+        Twitter
+        OAuth 
+        local uname and pword 
+
+        Using the local uname and pword 
+
 
 
 Dont forget material.io 
