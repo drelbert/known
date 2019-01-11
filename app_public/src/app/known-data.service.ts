@@ -18,7 +18,7 @@ import { Project } from './project';
 })
 export class KnownDataService {
   //the URL call
-  private apiBaseUrl = 'http://localhost:3000/api/';
+  private apiBaseUrl = 'http://localhost:3000/api';
 
   //Below are data services which call the API.
   //Defining a method to get the projects for home-list and the details-page.
