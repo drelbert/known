@@ -1,15 +1,9 @@
 const mongoose = require('mongoose');
 //DB connection string definition
-let dbURI = 'mongodb://localhost/known' ||'mongodb://heroku_bf9tx0rq:4o7hgbeftgukc62i3hb94mp6gl@ds163402.mlab.com:63402/heroku_bf9tx0rq';
-
-/* Commented out to test 
 let dbURI = 'mongodb://localhost/known';
 if (process.env.NODE_ENV === 'production') {
   dbURI = 'mongodb://heroku_bf9tx0rq:4o7hgbeftgukc62i3hb94mp6gl@ds163402.mlab.com:63402/heroku_bf9tx0rq'
 }
-*/
-
-
 mongoose.connect(dbURI);
 //Opening Mongoose connection at app startup
 mongoose.connection.on('connected', () => {

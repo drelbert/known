@@ -33,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'app_public', 'build')));
 //Allowing CORS req in Express 
 app.use('/api', (req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://intense-river-13488.herokuapp.com');
+  res.header('Access-Control-Allow-Origin', 'mongodb://heroku_bf9tx0rq:4o7hgbeftgukc62i3hb94mp6gl@ds163402.mlab.com:63402/heroku_bf9tx0rq');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
  });
