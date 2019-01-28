@@ -40,3 +40,5 @@ userSchema.methods.setPassword = function (password) {
       exp: parseInt(expiry.getTime() / 1000, 10),
     }, process.env.JWT_SECRET );
   };
+
+  mongoose.model('User', userSchema);

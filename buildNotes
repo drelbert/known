@@ -440,6 +440,18 @@ two new corresponding controllers
             and 
             two route definitions 
 
+    app_api/config/passport.js
+        has 
+            local strategy 
+
+    app_api/index.js 
+        has 
+            controller files required 
+            and 
+            the the router.p[ost code 
+            for 
+            register and login 
+            ]       
     app_api/controllers 
         authentication.js file      
             imports requirements for the register controller 

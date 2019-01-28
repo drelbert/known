@@ -35,10 +35,12 @@ app.use(passport.initialize());
 
 //Allowing CORS req in Express 
 app.use('/api', (req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:4300','https://intense-river-13488.herokuapp.com');
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200','https://intense-river-13488.herokuapp.com');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
   next();
  });
+
+
 
 //Here are the routes the app needs 
 //Using the / paramter defines when it should use them

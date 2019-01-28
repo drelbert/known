@@ -23,6 +23,7 @@ router
     .put(ctrlProjects.projectsUpdateOne)
     .delete(ctrlProjects.projectsDeleteOne);
 
+//Dealing with user reg and login. 
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
