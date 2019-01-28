@@ -392,7 +392,66 @@ Creating Auth with Passport
 
         Using the local uname and pword 
 
+//Adding Passport settings to app.js 
 
+installed = via npm
+configuired  = in the app_api/config folder
+initialized = in app.js 
+
+//File connections 
+    MongoDB and Mongoose side file work 
+
+    api/models/users.js 
+        has the userSchema
+
+    db.js 
+        require the users.js file 
+
+    .env file 
+        with secret set 
+
+    Auth API with Passport side 
+        Make Auth in node easy 
+    
+    api/config 
+        has passport.js 
+        requiring passport 
+        and these =
+        local stratgey model 
+        Mongoose 
+        user model 
+
+    app.js 
+        requires Passport 
+        requires the strategy config 
+        initializes Passport 
+
+//Creating API enpoints to return JWT's 
+Need two new endpoints 
+
+Add two new route definitions 
+and 
+two new corresponding controllers 
+
+//File connections 
+    app_api/routes 
+        index.js file with 
+            'const ctrlAuth =...'
+            and 
+            two route definitions 
+
+    app_api/controllers 
+        authentication.js file      
+            imports requirements for the register controller 
+        has 
+            the registration controller 
+
+        and 
+            the login controller 
+
+
+
+//TODO: document based on code in files and any connections
 
 Dont forget material.io 
 

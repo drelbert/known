@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 //Here, req the related controller files 
 const ctrlProjects = require('../controllers/projects');
-//This is where the path to the people controller will go
+const ctrlAuth = require('../controllers/authentication');
 
 //Defining the routes
 
@@ -23,8 +23,8 @@ router
     .put(ctrlProjects.projectsUpdateOne)
     .delete(ctrlProjects.projectsDeleteOne);
 
-//People routes
-//To be added later  
+router.post('/register', ctrlAuth.register);
+router.post('/login', ctrlAuth.login);
 
 module.exports = router;
 
