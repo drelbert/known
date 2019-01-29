@@ -331,11 +331,9 @@ has
 Updating Express to deliver Angular as front-end rather than Pug 
 
 
-//Bug with Heroku and mLab db connection 
-the build as of now 
-db = MongoDB
-API, Express, Node.js
-SPA = Angular/AngularJS 
+//Angualar build command
+    ng build --prod --output-path build
+
 
 
 
@@ -451,7 +449,7 @@ two new corresponding controllers
             the the router.p[ost code 
             for 
             register and login 
-            ]       
+                
     app_api/controllers 
         authentication.js file      
             imports requirements for the register controller 
@@ -462,6 +460,13 @@ two new corresponding controllers
             the login controller 
 
 
+//Adding auth middleware to Express routes 
+    app_api/routes/inde.js 
+        has JWT 
+        and auth 
+        required 
+
+    
 
 //TODO: document based on code in files and any connections
 

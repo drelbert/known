@@ -1,6 +1,11 @@
 //Router file 
 const express = require('express');
 const router = express.Router();
+const jwt = require('express-jwt');
+const auth = jwt({
+    secret: process.env.JWT_SECRET,
+    userProperty: 'payload'
+});
 //Here, req the related controller files 
 const ctrlProjects = require('../controllers/projects');
 const ctrlAuth = require('../controllers/authentication');
@@ -14,14 +19,14 @@ router
     .route('/projects')
     //then chain on different HTTP methods such as get, post, put etc
     .get(ctrlProjects.projectsList)
-    .post(ctrlProjects.projectsCreate);
+    .post(auth, ctrlProjects.projectsCreate);
 
 //Dealing with specific projects
 router  
     .route('/projects/:projectid')
     .get(ctrlProjects.projectsReadOne)
-    .put(ctrlProjects.projectsUpdateOne)
-    .delete(ctrlProjects.projectsDeleteOne);
+    .put(auth, ctrlProjects.projectsUpdateOne)
+    .delete(auth, ctrlProjects.projectsDeleteOne);
 
 //Dealing with user reg and login. 
 router.post('/register', ctrlAuth.register);
