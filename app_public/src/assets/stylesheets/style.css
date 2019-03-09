@@ -1,7 +1,7 @@
 @import url("//fonts.googleapis.com/css?family=Roboto");
 
 body {
-  background-color: #66757f;
+  background-color: #f4f6f8;
   font-family: 'Roboto Slab', serif;
   color: #292f33;
 }
@@ -20,6 +20,16 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: 'Roboto', serif;
 }
 
+.navbar-light .navbar-toggler-right {
+  color: white;
+  border-color: white;
+}
+
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: white;
+}
+
 .nav-link {
   color: #FFFFFF;
   font-family: 'Roboto', serif;
@@ -27,7 +37,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .banner {
   margin-top: 4em;
-  border-bottom: 1px solid #469ea8;
+  border-bottom: 1px solid #55acee;
   margin-bottom: 1.5em;
   padding-bottom: 0.5em;
 }

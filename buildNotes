@@ -331,10 +331,13 @@ has
 Updating Express to deliver Angular as front-end rather than Pug 
 
 
+//Pushing up to Heroku after changes 
+    git add --all
+    git commit –m 'add commit message here'
+    git push heroku master
+
 //Angualar build command
     ng build --prod --output-path build
-
-
 
 
 //Ch 11 Auth Users, Mng Session, Secure API
@@ -461,12 +464,57 @@ two new corresponding controllers
 
 
 //Adding auth middleware to Express routes 
-    app_api/routes/inde.js 
+    app_api/routes/index.js 
         has JWT 
         and auth 
         required 
 
     
+
+
+//Ch 12 Using Auth API in Angular apps
+    Is 
+        Managaing a User Session 
+            Has 
+                local storage employed in 
+                the class file in 
+                app_public/src/app/storage.ts 
+
+                and a new service Authentication 
+                app/authentication.service.ts 
+
+        Signing up, sign in, and sign out 
+            Has 
+                classes in the 
+                user.ts 
+                authresponse.ts 
+
+                and 
+                authentication.service.ts 
+                with multiple methods for 
+                    registration 
+                    log in 
+                    log out 
+                    log in status
+                    getting user info
+
+                and 
+                login()
+                register() 
+                methods 
+                in 
+                KnownDataService 
+
+            
+    Creating reg and log in pages 
+        Has 
+            register page 
+
+            login page 
+
+            
+
+
 
 //TODO: document based on code in files and any connections
 

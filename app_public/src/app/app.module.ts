@@ -20,6 +20,8 @@ import { HtmlLineBreaksPipe } from './html-line-breaks.pipe';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { AddProjectComponent } from './add-project/add-project.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -35,7 +37,9 @@ import { AddProjectComponent } from './add-project/add-project.component';
     HtmlLineBreaksPipe,
     ProjectDetailsComponent,
     DetailsPageComponent,
-    AddProjectComponent
+    AddProjectComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule, 
