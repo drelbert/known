@@ -331,13 +331,20 @@ has
 Updating Express to deliver Angular as front-end rather than Pug 
 
 
+
+
+//Angualar build command
+    ng build --prod --output-path build
+
+    
 //Pushing up to Heroku after changes 
     git add --all
     git commit –m 'add commit message here'
     git push heroku master
 
-//Angualar build command
-    ng build --prod --output-path build
+
+
+
 
 
 //Ch 11 Auth Users, Mng Session, Secure API
@@ -513,11 +520,4 @@ two new corresponding controllers
             login page 
 
             
-
-
-
-//TODO: document based on code in files and any connections
-
-Dont forget material.io 
-
 

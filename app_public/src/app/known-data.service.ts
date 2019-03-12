@@ -22,10 +22,13 @@ import { environment } from '../environments/environment';
 })
 export class KnownDataService {
   //Injecting the service by defining the parameter name: type
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    @Inject(BROWSER_STORAGE) private storage: Storage) { }
 
   //the URL call
   //private apiBaseUrl = 'mongodb://heroku_bf9tx0rq:4o7hgbeftgukc62i3hb94mp6gl@ds163402.mlab.com:63402/heroku_bf9tx0rq';
+  
   //Oriningal code prior to adding environemnt config changes
   //private apiBaseUrl = 'http://localhost:3000/api';
   
