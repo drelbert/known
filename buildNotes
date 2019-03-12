@@ -336,8 +336,9 @@ Updating Express to deliver Angular as front-end rather than Pug
 //Angualar build command
     ng build --prod --output-path build
 
-    
+
 //Pushing up to Heroku after changes 
+
     git add --all
     git commit –m 'add commit message here'
     git push heroku master
